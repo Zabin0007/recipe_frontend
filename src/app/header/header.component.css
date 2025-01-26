@@ -1,0 +1,10 @@
+.navbar{
+    background-color: #6c6450;
+}
+a{
+    color: white ;
+}
+.navbar .dropdown-menu { 
+    right: 0; 
+    left: auto; 
+}

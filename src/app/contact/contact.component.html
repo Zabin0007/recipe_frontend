@@ -1,0 +1,50 @@
+<div style="background-color: whitesmoke;">
+<div class="container">
+    <div class="row p-5">
+        <div class="col-12 mb-3">
+            <div class="border shadow p-3">
+            <h2 class="text-center">Contact us</h2>
+            <p>We value your input and look forward to building a vibrant community of passionate cooks and food lovers. Let's make the world a little smaller and a lot more delicious, one recipe at a time!</p>
+        </div>
+        </div> 
+        <div class="col-12 col-md-1"></div>
+        <div class="col-12 col-md-5">
+            <div class="p-3 border shadow">
+            <h4>Get in Touch</h4>
+            <p>We'd love to hear from you! Whether you have a question, need assistance, or just want to share your thoughts, we're here to help.</p>
+            <ul>
+                <li>Adress: NYC 0320 Berlin</li>
+                <li>Phone No: 9006490064</li>
+                <li>Email: RecipeWorld &#64;gmail.com</li>
+            </ul>
+            <h5>Follow Us</h5>
+            <div class="d-flex justify-content-center">
+            <button  data-mdb-ripple-init type="button" class="btn btn-sm btn-outline-dark btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+          
+              <button  data-mdb-ripple-init type="button" class="btn btn-sm btn-outline-dark btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+          
+              <button  data-mdb-ripple-init type="button" class="btn btn-sm btn-outline-dark btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+              </div>
+        </div>
+        </div>
+        <div class="col-12 col-md-5">
+                <form  (ngSubmit)="addTestimony()" [formGroup]="testimonyForm" class="border shadow p-4">
+                    <h3>Client Testimony</h3>
+                    <input type="text" formControlName="name" placeholder="Name" class="form-control mb-2">
+                    <input type="text" formControlName="email" placeholder="email" class="form-control mb-2">
+                    <input type="textbox" formControlName="message" placeholder="Send Message" class="form-control mb-2">
+                    <p>By Submitting,your agreeing the terms and conditions of our website.We may use your detsils in our website .
+                    <button class="btn btn-sm btn-dark my-3" style="float: right;">Submit</button> </p>
+                    </form>
+        </div>
+        <div class="col-12 col-md-1"></div>
+
+    </div>
+</div>
+</div>

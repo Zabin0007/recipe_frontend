@@ -1,0 +1,59 @@
+<div style="background-color: whitesmoke; color: black;">
+    <div class="contanier p-0">
+        <div class="row p-5 m-0">
+            <div class="col-12 col-md-6 p-5 text-center">
+                <h3>The Easiest Way To Make Your Favourite Meal</h3>
+                <p>Discover 100+ recipes in your hand with th best recipe.help you to find the easiest way to cook</p>
+               <a routerLink="login"> <button class="btn" style="background-color: #6c6450; color: white;" >Explore Recipes</button> </a>
+            </div>
+            <div class="col-12 col-md-6 p-5">
+                <img class="img-fluid" style="border-radius: 20px" src="https://imgs.search.brave.com/HEnPeHLog8eWfCFJDSyqdxFgpnxdkUshuoORQ25w16M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE5/NzQ5NDE0My9waG90/by9tZW4tZWF0aW5n/LXZlZ2FuLWNyZWFt/eS1yb2FzdGVkLXB1/bXBraW4tc291cC5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/Tktfejl6d0FzUlpa/TGVGV2djTy1iNGdz/SG5ZZzRrVkZkdks2/SVlET01YWT0" alt="">
+            </div>
+
+            <h3 class="text-center ">Polpular Recipe of the Week</h3>
+            <div class="d-flex justify-content-between">
+              <h4>Our Most Popular recipe of the Week</h4>
+              <a routerLink="recipe">View All</a>
+            </div>
+           @for (item of limitRecipes; track $index) {
+            <div class="col-12 col-md-4">
+              <div class="card p-2">
+                  <img [src]="item.image"  width="250px" height="auto" class="img-fluid mx-auto" alt="Fissure in Sandstone"/>
+                  <h4>{{item.name}}</h4>
+                    <h6 class="card-title">Cuisine: {{item.cuisine}}</h6>
+                    <p class="card-text"></p>
+                    <a href="" class="btn btn-dark" data-mdb-ripple-init>View</a>
+                </div>
+          </div>
+           }
+            
+            <h3 class="text-center mt-4">Client Testimonials</h3>
+            <marquee direction="left">
+                <div class="col-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the.</p>
+                </div>
+            </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title.</p>
+                    </div>
+                </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build content.</p>
+                        </div>
+                    </div>
+                      </div>
+            </marquee>
+        </div>
+    </div>
+</div>

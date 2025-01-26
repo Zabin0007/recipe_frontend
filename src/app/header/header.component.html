@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg border-bottom">
+    <!-- Container wrapper -->
+    <div class="container ">
+      <!-- Toggle button -->
+      <a class="navbar-brand" href="">
+        <i class="fa-solid fa-utensils me-2 fs-3"></i>
+        <small>RecipeWorld</small>
+      </a>
+      <button
+        class="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarCenteredExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarCenteredExample"
+      >
+        <!-- Left links -->
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a  style="color: white;" class="nav-link active" aria-current="page" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="recipe">Recipes</a>
+          </li>
+          <!-- Navbar dropdown -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <li class="nav-item dropdown" style="list-style: none;">
+        @if (isLoggedIn) {
+          <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>Hi {{loggedusername}}
+          </a>
+          <ul class="dropdown-menu" style="background-color: #6c6450;">
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Profile</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Saved Recipe</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="register">Logout</a></li>
+          </ul>
+        }
+        @else {
+          <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <ul class="dropdown-menu" style="background-color: #6c6450;">
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Login</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="register">Register</a></li>
+          </ul>
+        }
+      </li>
+      <!-- Collapsible wrapper -->
+     
+    </div>
+    <!-- Container wrapper -->
+  </nav>    

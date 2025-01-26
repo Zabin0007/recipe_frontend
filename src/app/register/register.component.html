@@ -1,0 +1,79 @@
+<div style="background-color: whitesmoke;">
+<div class="container">
+    <div class="row p-5">
+        <div class="col-12 col-md-6 d-none d-md-block">
+            <img src="https://www.bublup.com/wp-content/uploads/2023/04/digital-recipe-book-app.png" width="100%" alt="">
+        </div>
+        <div class="col-12 col-md-6 bg rounded shadow ">
+            <form (ngSubmit)="addRegister()" [formGroup]="registerForm" class="mb-2">
+                <h3 class="text-center mt-2">Register Here</h3>
+                 <!-- Name input -->
+  <div data-mdb-input-init class="form-outline mb-2">
+    
+    <input type="text" formControlName="name" id="form4Example1" class="form-control" />
+    <label class="form-label" for="form4Example1">Name</label>
+  </div>
+
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline">
+                  <input formControlName="email" type="email" id="form2Example1" class="form-control" />
+                  <label class="form-label" for="form2Example1">Email address</label>
+                </div>
+                <div>
+                  @if(registerForm.get('email')?.errors && registerForm.get('email')?.touched){
+                    <p class="text-danger mb-2">Invalid format</p>
+                  }
+                </div>
+              
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                  <input formControlName="password" type="password" id="form2Example2" class="form-control" />
+                  <label class="form-label" for="form2Example2">Password</label>
+                </div>
+              
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-2 ">
+                  <div class="col d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+                      <label class="form-check-label" for="form2Example34"> Remember me </label>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <!-- Simple link -->
+                    <a href="#!" class="bg" style="text-decoration: none;">Forgot password?</a>
+                  </div>
+                </div>
+              
+                <!-- Submit button -->
+                <div class="text-center ">
+                    <button data-mdb-ripple-init  class="btn btn-outline-dark btn-block mb-2">Sign Up</button>
+                </div>
+              </form> 
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Already here?  <a routerLink="/login" class="bg" style="text-decoration: none;">please login</a></p>
+                  <p>or sign up with:</p>
+                  <button  data-mdb-ripple-init type="button" class="btn btn-outline-dark btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+              
+                  <button  data-mdb-ripple-init type="button" class="btn btn-outline-dark btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+              
+                  <button  data-mdb-ripple-init type="button" class="btn btn-outline-dark btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+              
+                  <button  data-mdb-ripple-init type="button" class="btn btn-outline-dark btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+              
+        </div>      
+    </div>
+</div>
+</div>

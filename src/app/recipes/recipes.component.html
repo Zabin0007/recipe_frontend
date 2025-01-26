@@ -1,0 +1,57 @@
+<div class="container mt-3">
+    <h6 style="float: right;">Today's Date:{{today | date:'short'}}</h6>
+    <br><br>
+    <div class="row">
+        <div class="col-4">
+            <h5>Filter</h5>
+        </div>
+        <div class="col-4">
+            <h3>All Recipes</h3>
+        </div>
+        <div class="col-4">
+            <input type="text" [(ngModel)]="searchKey" name="searchKey"  class="form-control" placeholder="Search your Recipe here...!">
+        </div>
+    </div>
+
+    <div class="row p-2 mb-3">
+        <div class="col-12 col-md-3">
+            <div>
+                <button (click)="getAllRecipe()" class="btn btn-outline-dark">All</button> <br>
+                <button data-bs-toggle="collapse" data-bs-target="#collapseCuisine" aria-expanded="false" aria-controls="collapseExample" class="btn btn-outline-dark dropdown-toggle">Cuisine Type</button>
+                <div class="collapse" id="collapseCuisine">
+                    <div class="row">
+                        @for (item of cuisineList; track $index) {
+                            <div class="col-12 col-md-4">
+                            <button (click)="filterRecipe('cuisine',item)" class="btn">{{item}}</button>
+                        </div>
+                        }                    
+                    </div>
+                  </div>
+                <br>
+                <button data-bs-toggle="collapse" data-bs-target="#collapseMeal" aria-expanded="false" aria-controls="collapseExample" class="btn btn-outline-dark dropdown-toggle">Meal Type</button>
+                <div class="collapse" id="collapseMeal">
+                    <div class="row">
+                        @for (item of meallist; track $index) {
+                            <div class="col-12 col-md-4">
+                            <button (click)="filterRecipe('mealType',item)" class="btn">{{item}}</button>
+                        </div>
+                        }                    
+                    </div>
+                  </div>            </div>
+        </div>
+        <div class="col-12 col-md-9">
+                <div class="row mt-4">            
+                  @for (item of recipeList | search:searchKey; track $index) {
+                    <div class="col-12 col-md-3">
+                        <div (click)="viewRecipe(item._id)"  class="card p-3">
+                            <img [src]='item.image' class="img-fluid" alt="Fissure in Sandstone"/>
+                          <h5 class="card-title">{{item.name}}</h5>
+                              <p class="card-text">Cuisine: {{item.cuisine}}</p>
+                          </div>
+                    </div>
+                  }
+                </div>
+        </div>
+    </div>
+
+</div>
