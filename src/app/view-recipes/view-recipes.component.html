@@ -1,10 +1,100 @@
+<div style="background-color: whitesmoke;">
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-
+    <div class="row p-2">
+        <div class="col-12 col-md-6 mt-3">
+<!-- From Uiverse.io by Jedi-hongbin --> 
+<button (click)="back()" id="button1">
+    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+    <span>Back</span>
+  </button>
+  <img [src]='recipe.image' style="border-radius: 15px;" class="img-fluid mt-5" alt="">
+  <!-- From Uiverse.io by andrew-demchenk0 --> 
+   <div class="mt-3 d-flex justify-content-between">
+<button (click)="toDownload()" class="button" type="button">
+    <span class="button__text">Download</span>
+    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+  </button>
+  <!-- From Uiverse.io by vinodjangid07 --> 
+<button (click)="toSaved()" class="bookmarkBtn">
+    <span class="IconContainer">
+      <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+        <path
+          d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+        ></path>
+      </svg>
+    </span>
+    <p class="text">Save</p>
+  </button>
+  
+</div>
         </div>
         <div class="col-12 col-md-6">
+            <h3 class="text-dark">{{recipe.name}}</h3>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h6>Cuisine: {{recipe.cuisine
+                    }}</h6>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h6>Servings: {{recipe.servings
+                    }}</h6>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h6>Mode of Cooking: {{recipe.difficulty
+                    }}</h6>
+                </div>
+            </div>
+            <div class="row mx-3 d-flex justify-content-evenly">
+                <div class="col">
+                    <i class="fa-regular fa-clock fs-2"></i>
+                    <br>
+                    Preperation Time <br>
+                    {{recipe.
+prepTimeMinutes}}
 
+                </div>
+                <div class="col"><i class="fa-solid fa-kitchen-set fs-2"></i>
+                <br>
+                    Cooking Time <br>
+                    {{recipe.cookTimeMinutes}}
+
+            </div>
+                <div class="col"><i class="fa-solid fa-utensils fs-2"></i>
+                    <br>
+                Calories <br>
+                {{recipe.caloriesPerServing}}
+                </div>
+            </div>
+            <h3>Ingredients Needed</h3>
+            <ol>
+            @for (item of recipe.ingredients; track $index) {
+                <li>{{item}}</li>
+            }
+        </ol>
+        <h3>Cooking Instructions</h3>
+        <ol>
+            @for (item of recipe.instructions
+; track $index) {
+     <li>{{item}}</li>
+}
+           
+        </ol>
         </div>
+            <div class="row">
+                <h3>Related Recipes</h3>
+                <div class="row">
+                   @if(relatedecipe.length>0){
+                    @for (item of relatedecipe; track $index) {
+                        <div class="col">
+                            <div class="card shadow p-4 my-2" style="width: 250px; height: 300px;">
+                                <img [src]="item.image" class="img-fluid" alt="">
+                                <h5>{{item.name}}</h5>
+                            </div>
+                        </div>
+                    }
+                   }
+                </div>
+            </div>
     </div>
+</div>
 </div>

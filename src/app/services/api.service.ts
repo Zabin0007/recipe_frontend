@@ -24,6 +24,10 @@ server_url = 'http://localhost:3000'
   getSingleRecipe(id:any){
     return this.http.get(`${this.server_url}/SingleRecipe/${id}`,this.appendToken())
   }
+  //getRelatedRecipe //http://localhost:3000/relatedrecipe?cuisine=Pakistani
+  getRelatedRecipe(cuisine:any){
+    return this.http.get(`${this.server_url}/relatedrecipe?cuisine=${cuisine}`,this.appendToken())
+  }
   //post testimony
   addTestimony(reqBody:any){
     return this.http.post(`${this.server_url}/testimony`,reqBody)
@@ -35,5 +39,21 @@ server_url = 'http://localhost:3000'
   //post login
   loginAPI(reqBody:any){
     return this.http.post(`${this.server_url}/login`,reqBody)
+   }
+   //post downloads
+   addToDownload(id:any,reqBody:any){
+    return this.http.post(`${this.server_url}/downloads/${id}`,reqBody,this.appendToken())
+   }
+   //post saved
+   addToSaved(id:any,reqBody:any){
+    return this.http.post(`${this.server_url}/saved/${id}`,reqBody,this.appendToken())
+   }
+   //get Saved
+   viewSaved(){
+    return this.http.get(`${this.server_url}/viewSaved`,this.appendToken())
+   }
+   //delete Saved
+   deleterecipe(id:any){
+    return this.http.delete(`${this.server_url}/deleteSaved/${id}`,this.appendToken())
    }
 }

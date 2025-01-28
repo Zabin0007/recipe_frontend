@@ -4,15 +4,18 @@ import { DatePipe } from '@angular/common';
 import { SearchPipe } from '../pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-recipes',
   standalone: true,
-  imports: [DatePipe,SearchPipe,FormsModule],
+  imports: [DatePipe,SearchPipe,FormsModule,NgxPaginationModule],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css'
 })
 export class RecipesComponent implements OnInit {
+
+  p: number=1
 
   searchKey:string='' //to implement seach value from input box
 

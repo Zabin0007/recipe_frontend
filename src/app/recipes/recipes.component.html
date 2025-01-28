@@ -41,7 +41,7 @@
         </div>
         <div class="col-12 col-md-9">
                 <div class="row mt-4">            
-                  @for (item of recipeList | search:searchKey; track $index) {
+                  @for (item of recipeList | search:searchKey | paginate: { itemsPerPage: 8, currentPage: p }; track $index ) {
                     <div class="col-12 col-md-3">
                         <div (click)="viewRecipe(item._id)"  class="card p-3">
                             <img [src]='item.image' class="img-fluid" alt="Fissure in Sandstone"/>
@@ -50,6 +50,7 @@
                           </div>
                     </div>
                   }
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </div>
         </div>
     </div>

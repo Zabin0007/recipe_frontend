@@ -50,9 +50,9 @@
               <i class="fa-solid fa-user"></i>Hi {{loggedusername}}
           </a>
           <ul class="dropdown-menu" style="background-color: #6c6450;">
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Profile</a></li>
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Saved Recipe</a></li>
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="register">Logout</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="profile">Profile</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="saved-recipe">Saved Recipe</a></li>
+            <li><a (click)="logout()" class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Logout</a></li>
           </ul>
         }
         @else {
