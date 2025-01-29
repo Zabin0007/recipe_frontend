@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-saved-recipe',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './saved-recipe.component.html',
   styleUrl: './saved-recipe.component.css'
 })

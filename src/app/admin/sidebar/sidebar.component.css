@@ -1,0 +1,16 @@
+.side{
+    width: 350px;
+    min-height: 100vh;
+    background-color: #6c6450;
+    color: white;
+}
+.admin{
+    background-color: whitesmoke;
+}
+li a {
+    text-decoration: none;
+    color: white;
+}
+li a:hover{
+    font-size: larger;
+}

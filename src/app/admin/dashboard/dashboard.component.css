@@ -1,0 +1,7 @@
+.navbar .dropdown-menu { 
+    right: 0; 
+    left: auto; 
+}
+nav{
+    border-radius: 15px;
+}

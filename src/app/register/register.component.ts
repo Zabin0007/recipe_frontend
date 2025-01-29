@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink,ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, HeaderComponent, FooterComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

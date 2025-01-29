@@ -28,16 +28,18 @@
             <a  style="color: white;" class="nav-link active" aria-current="page" routerLink="">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="recipe">Recipes</a>
+            <a class="nav-link" routerLink="/recipe">
+              Recipes
+            </a>
           </li>
           <!-- Navbar dropdown -->
           <li class="nav-item">
-            <a class="nav-link" routerLink="about">
+            <a class="nav-link" routerLink="/about">
               About
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="contact"
+            <a class="nav-link" routerLink="/contact"
               >Contact</a
             >
           </li>
@@ -50,9 +52,9 @@
               <i class="fa-solid fa-user"></i>Hi {{loggedusername}}
           </a>
           <ul class="dropdown-menu" style="background-color: #6c6450;">
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="profile">Profile</a></li>
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="saved-recipe">Saved Recipe</a></li>
-            <li><a (click)="logout()" class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Logout</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="/saved-recipe">Saved Recipe</a></li>
+            <li><a (click)="logout()" class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="/login">Logout</a></li>
           </ul>
         }
         @else {
@@ -60,8 +62,8 @@
             <i class="fa-solid fa-user"></i>
           </a>
           <ul class="dropdown-menu" style="background-color: #6c6450;">
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="login">Login</a></li>
-            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="register">Register</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="/login">Login</a></li>
+            <li><a class="dropdown-item" href="#" style="background-color: #6c6450;" routerLink="/register">Register</a></li>
           </ul>
         }
       </li>
