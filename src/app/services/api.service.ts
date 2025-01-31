@@ -56,4 +56,29 @@ server_url = 'http://localhost:3000'
    deleterecipe(id:any){
     return this.http.delete(`${this.server_url}/deleteSaved/${id}`,this.appendToken())
    }
+
+   getDownloadedRecipe(){
+    return this.http.get(`${this.server_url}/getDownloads`)
+  }
+  
+  getUsers(){
+    return this.http.get(`${this.server_url}/getUsers`)
+  }
+  
+  getTestimonies(){
+    return this.http.get(`${this.server_url}/getTestimonies`)
+  }
+  
+  updateTestimoney(id:any,status:string){
+    return this.http.get(`${this.server_url}/updateTestimony/${id}?status=${status}`)
+  }
+  //add recipe
+  addRecipe(reqBody:any){
+    return this.http.post(`${this.server_url}/addRecipe`,reqBody)
+  }
+
+  //delete recipes
+  deleteRecipeAPI(id:any){
+    return this.http.delete(`${this.server_url}/deleteRecipe/${id}`)
+  }
 }

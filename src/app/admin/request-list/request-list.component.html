@@ -17,13 +17,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Zabi</td>
-                        <td>zabimuhammed&#64;gmail.com</td>
-                         <td>Delicious Website Loved It</td>
-                        <td><Button class="btn btn-success">Approved</Button></td>
-                      </tr>
+                      
+                       @for (item of request; track $index) {
+                        <tr>
+                        <th scope="row">{{$index+1}}</th>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                         <td>{{item.message}}</td>
+                        <td>
+                          @if(item.status=='pending'){
+                            <Button (click)="updateTestimony(item._id,'Approved')" class="btn btn-success">Approved</Button>
+                            <Button (click)="updateTestimony(item._id,'Rejected')" class="btn btn-danger">Rejected</Button>
+                          }@else if(item.status=='Approved'){
+                            <Button class="btn btn-success">Approved</Button>
+                          }@else {
+                            <Button class="btn btn-danger">Rejected</Button>
+                          }
+                        </td>
+                      </tr> 
+                      }
+                      
                     </tbody>
                   </table>
             </div>

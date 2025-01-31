@@ -15,11 +15,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                     @for (item of user; track $index) {
                       <tr>
                         <th scope="row">1</th>
-                        <td>Zabi</td>
-                        <td>zabimuhammed&#64;gmail.com</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
                       </tr>
+                     }
                     </tbody>
                   </table>
             </div>
